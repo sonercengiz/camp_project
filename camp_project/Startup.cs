@@ -34,7 +34,7 @@ namespace camp_project
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Campground/Error");
             }
             app.UseStaticFiles();
 
@@ -46,7 +46,7 @@ namespace camp_project
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Campground}/{action=Index}/{id?}");
             });
         }
     }

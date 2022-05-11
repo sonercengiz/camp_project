@@ -8,5 +8,9 @@ namespace camp_project.Controllers
         {
             return View();
         }
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
