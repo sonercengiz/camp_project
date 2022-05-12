@@ -3,6 +3,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script>
+    function navigateToItem(id){
+        window.location.href = "/campground/detail?id=" + id
+    }
+    function imageNotFound(id) {
+        document.getElementById(id).src = "/img/cantload.png"
+    }
+</script>
+
 <div class="tile-il">
     <span>@ViewBag.il İlinde Yer Alan Kamp Alanları</span>
 </div>
@@ -10,7 +19,7 @@
 @foreach (var item in Model)
 {
     <div class="campground-tile" onclick=navigateToItem(@item.ID)>
-        <img src="https://www.w3schools.com/css/paris.jpg">
+        <img id="img @Html.DisplayFor(modelItem => item.ID)" src="@Html.DisplayFor(modelItem => item.resim1)" onerror="imageNotFound(this.id)" />
         <div>
             <span>@Html.DisplayFor(modelItem => item.isim)</span>
             <ul>
@@ -20,8 +29,3 @@
         </div>
     </div>
 }
-<script>
-function navigateToItem(id){
-    window.location.href = "/campground/detail?id=" + id
-}
-</script>

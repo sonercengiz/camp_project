@@ -4,6 +4,11 @@
     ViewData["Title"] = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script>
+    function imageNotFound(id) {
+        document.getElementById(id).src = "/img/cantload.png"
+    }
+</script>
 
 <table id="campground">
     <tr>
@@ -38,7 +43,8 @@
         <td>@Html.DisplayFor(model => model.adres)</td>
     </tr>
 </table>
-
-<img width="100" height="100" src="@Html.DisplayFor(model => model.resim1)" style="display: block;"/>
-<img width="100" height="100" src="@Html.DisplayFor(model => model.resim2)" style="display: block;"/>
-<img width="100" height="100" src="@Html.DisplayFor(model => model.resim3)" style="display: block;"/>
+<div style="text-align: center; padding: 20px;">
+    <img style="width: 300px; height: 200px;" id="img 1 @Html.DisplayFor(model => model.ID)" width="100" height="100" src="@Html.DisplayFor(model => model.resim1)" onerror="imageNotFound(this.id)" />
+    <img style="width: 300px; height: 200px;" id="img 2 @Html.DisplayFor(model => model.ID)" width="100" height="100" src="@Html.DisplayFor(model => model.resim2)" onerror="imageNotFound(this.id)" />
+    <img style="width: 300px; height: 200px;" id="img 3 @Html.DisplayFor(model => model.ID)" width="100" height="100" src="@Html.DisplayFor(model => model.resim3)" onerror="imageNotFound(this.id)" />
+</div>

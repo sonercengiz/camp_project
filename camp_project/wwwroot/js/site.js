@@ -17,4 +17,3 @@ function NavigateToCity() {
     let il = document.getElementById("iller").value;
     window.location.href = "/campground/index?il=" + il;
 }
-

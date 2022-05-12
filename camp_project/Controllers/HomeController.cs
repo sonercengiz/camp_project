@@ -7,7 +7,7 @@ namespace camp_project.Controllers
 {
     public class HomeController : Controller
     {
-        private const string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Monster\Downloads\Kamp Yerleri.accdb;";
+        private const string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Data\Kamp Yerleri.accdb;";
         public ActionResult Index()
         {
             List<string> iller = new List<string>();

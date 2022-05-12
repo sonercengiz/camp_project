@@ -13,7 +13,8 @@ namespace camp_project.Controllers
 {
     public class CampgroundController : Controller
     {
-        private const string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Monster\Downloads\Kamp Yerleri.accdb;";
+        private const string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Data\Kamp Yerleri.accdb;";
+
         public IActionResult Index(string il)
         {
             ViewBag.il = il;
@@ -38,6 +39,9 @@ namespace camp_project.Controllers
                         kampYeri.bilgi = reader["bilgi"].ToString();
                         kampYeri.iletisimTelefon = reader["iletişim_telefon"].ToString();
                         kampYeri.adres = reader["adres"].ToString();
+                        kampYeri.resim1 = String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String((byte[])reader["resim1"]));
+                        kampYeri.resim2 = String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String((byte[])reader["resim2"]));
+                        kampYeri.resim3 = String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String((byte[])reader["resim3"]));
                         kampYerleri.Add(kampYeri);
                     }
                     con.Close();
@@ -71,9 +75,9 @@ namespace camp_project.Controllers
                         kampYeri.bilgi = reader["bilgi"].ToString();
                         kampYeri.iletisimTelefon = reader["iletişim_telefon"].ToString();
                         kampYeri.adres = reader["adres"].ToString();
-                        kampYeri.resim1 = "data:image/jpg;base64," + Convert.ToBase64String((byte[])reader["resim1"]);
-                        kampYeri.resim2 = "data:image/jpg;base64," + Convert.ToBase64String((byte[])reader["resim2"]);
-                        kampYeri.resim3 = "data:image/jpg;base64," + Convert.ToBase64String((byte[])reader["resim3"]);
+                        kampYeri.resim1 = String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String((byte[])reader["resim1"]));
+                        kampYeri.resim2 = String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String((byte[])reader["resim2"]));
+                        kampYeri.resim3 = String.Format("data:image/jpg;base64,{0}", Convert.ToBase64String((byte[])reader["resim3"]));
                     }
                     con.Close();
                     if (kampYeri != null)
