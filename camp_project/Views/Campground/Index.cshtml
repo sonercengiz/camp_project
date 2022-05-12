@@ -1,8 +1,27 @@
-﻿
+﻿@model IEnumerable<camp_project.Models.Campground>
 @{
-    ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="tile-il">
+    <span>@ViewBag.il İlinde Yer Alan Kamp Alanları</span>
+</div>
 
+@foreach (var item in Model)
+{
+    <div class="campground-tile" onclick=navigateToItem(@item.ID)>
+        <img src="https://www.w3schools.com/css/paris.jpg">
+        <div>
+            <span>@Html.DisplayFor(modelItem => item.isim)</span>
+            <ul>
+                <li>@Html.DisplayFor(modelItem => item.il)</li>
+                <li>@Html.DisplayFor(modelItem => item.lokasyon)</li>
+            </ul>
+        </div>
+    </div>
+}
+<script>
+function navigateToItem(id){
+    window.location.href = "/campground/detail?id=" + id
+}
+</script>

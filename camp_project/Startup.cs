@@ -19,13 +19,11 @@ namespace camp_project
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
@@ -34,7 +32,7 @@ namespace camp_project
             }
             else
             {
-                app.UseExceptionHandler("/Campground/Error");
+                app.UseExceptionHandler("/Home/Error");
             }
             app.UseStaticFiles();
 
@@ -46,7 +44,7 @@ namespace camp_project
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Campground}/{action=Index}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

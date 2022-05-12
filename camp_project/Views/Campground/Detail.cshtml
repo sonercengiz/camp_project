@@ -1,0 +1,44 @@
+﻿@model camp_project.Models.Campground
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="campground">
+    <tr>
+        <th colspan=2>@Html.DisplayFor(model => model.isim)</th>
+    </tr>
+    <tr>
+        <td>İl</td>
+        <td>@Html.DisplayFor(model => model.il)</td>
+    </tr>
+    <tr>
+        <td>Lokasyon</td>
+        <td>@Html.DisplayFor(model => model.lokasyon)</td>
+    </tr>
+    <tr>
+        <td>Çadır</td>
+        <td>@Html.DisplayFor(model => model.cadir)</td>
+    </tr>
+    <tr>
+        <td>Karavan</td>
+        <td>@Html.DisplayFor(model => model.karavan)</td>
+    </tr>
+    <tr>
+        <td>Bilgi</td>
+        <td>@Html.DisplayFor(model => model.bilgi)</td>
+    </tr>
+    <tr>
+        <td>İletişim Telefon</td>
+        <td>@Html.DisplayFor(model => model.iletisimTelefon)</td>
+    </tr>
+    <tr>
+        <td>Adres</td>
+        <td>@Html.DisplayFor(model => model.adres)</td>
+    </tr>
+</table>
+
+<img width="100" height="100" src="@Html.DisplayFor(model => model.resim1)" style="display: block;"/>
+<img width="100" height="100" src="@Html.DisplayFor(model => model.resim2)" style="display: block;"/>
+<img width="100" height="100" src="@Html.DisplayFor(model => model.resim3)" style="display: block;"/>

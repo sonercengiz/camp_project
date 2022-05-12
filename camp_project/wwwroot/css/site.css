@@ -1,0 +1,137 @@
+﻿html {
+    background-color: #d9d6c7;
+}
+
+.main {
+    margin: 0 auto;
+    padding: 0 0 3em;
+    max-width: 75em;
+    width: 100%;
+}
+.search-container {
+    text-align: center;
+    width: 100%;
+}
+.search-button {
+    background-color: #e46c0a;
+    color: white;
+    border: 3px solid #385D8A;
+}
+
+#camp-image {
+    padding: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.float-container {
+    display: flex
+}
+
+.float-child {
+    width: 50%;
+    padding: 20px;
+}
+
+.tile {
+    text-align: center;
+    border: 3px solid #385D8A;
+    background-color: #4BACC6;
+    margin: 10px 10px 10px 10px;
+    height: 50px;
+    line-height: 50px;
+    width: 400px;
+}
+
+.tile-text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    color: red;
+    font-family: verdana;
+    font-size: 20px;
+}
+
+.campground-tile {
+    border-radius: 25px;
+    border: 3px solid white;
+    background: #C0504D;
+    display: flex;
+    height: 225px;
+    line-height: 50px;
+}
+
+    .campground-tile > img {
+        border-radius: 10%;
+        margin: 10px 10px 10px 10px;
+        border: 3px solid white;
+        object-fit: fill;
+        height: 200px;
+        width: 300px;
+    }
+
+    .campground-tile > div {
+        margin: 30px 30px 30px 30px;
+    }
+
+        .campground-tile > div > span {
+            color: white;
+            font-size: 30px;
+        }
+
+        .campground-tile > div > ul {
+            color: white;
+            font-size: 20px;
+            display: inline;
+        }
+
+.tile-il {
+    border-radius: 25px;
+    text-align: center;
+    border: 3px solid #385D8A;
+    background-color: green;
+    margin: 10px 10px 10px 10px;
+    height: 150px;
+    line-height: 150px;
+}
+
+    .tile-il > span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+        color: white;
+        font-family: verdana;
+        font-size: 40px;
+    }
+
+#campground {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #campground td, #customers th {
+        border: 3px solid white;
+        padding: 8px;
+    }
+
+    #campground tr:nth-child(odd) {
+        background-color: #eff3ea;
+    }
+
+    #campground tr:nth-child(even) {
+        background-color: #dee7d1;
+    }
+
+    #campground tr:hover {
+        background-color: #bfd0a6;
+    }
+
+    #campground th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #04AA6D;
+        color: white;
+    }

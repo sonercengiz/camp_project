@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<p style="color: green;">Ege ve Akdeniz bölgesinde deniz yakın konumlarda olan kamp ve karavan ile kamp yapılabilecek kamp yeri lokasyonları sizler için derledik. Sitemizde kamp yerlerine ilişkin ayrıntılar, lokasyonlar iletişim bilgileri ve değerlendirmeler yer almaktadır. Aşağıdaki linke tıklayarak kamp yapmak istediğiniz ili seçerek o ilde bulunan kamp yerleri bilgilerine ulaşabilirsiniz.</p>
+<div class="search-container">
+    <select id="iller">
+        @foreach (string il in ViewBag.iller)
+        {
+            <option value=@il>@il</option>
+        }
+    </select>
+    <input class="search-button" type="button" value="İl Seçiniz" onclick=NavigateToCity() />
+</div>
+<img id="camp-image" src="~/img/kamp.jpg"/>
